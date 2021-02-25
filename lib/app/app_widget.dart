@@ -1,14 +1,14 @@
-import 'package:ecommerce/app/app_module.dart';
-import 'package:ecommerce/app/widgets/alert_widget.dart';
-import 'package:ecommerce/app/widgets/loading_widget.dart';
-import 'package:ecommerce/generated/l10n.dart';
-import 'package:ecommerce/models/theme/theme_data.dart';
-import 'package:ecommerce/theme/theme.dart';
+import 'package:webrtc_demo/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../models/theme/theme_data.dart';
+import '../theme/theme.dart';
 import 'app_bloc.dart';
+import 'app_module.dart';
+import 'widgets/alert_widget.dart';
+import 'widgets/loading_widget.dart';
 
 class AppWidget extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _AppWidget extends State<AppWidget> {
   Widget renderMain(snapshot) => MaterialApp(
     debugShowCheckedModeBanner: false,
     navigatorKey: Modular.navigatorKey,
-    title: 'Trùm Supp',
+    title: 'WebRTC Demo',
     theme: snapshot.hasData
         ? snapshot.data.themeData
         : getThemeMode(THEME_MODE.LIGHT).themeData,

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerce/tool/common.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../tool/common.dart';
 
 class LoggingInterceptor extends Interceptor {
   int _maxCharactersPerLine = 200;

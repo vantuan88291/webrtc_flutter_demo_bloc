@@ -1,4 +1,4 @@
-name: ecommerce
+name: webrtc_demo
 description: A new Flutter project. Created by Slidy
 
 # The following line prevents the package from being accidentally published to
@@ -22,11 +22,13 @@ environment:
 
 dependencies:
   dio: ^3.0.10
-  rxdart: ^0.24.1
-  shared_preferences: ^0.5.10
+  rxdart: ^0.25.0
+  shared_preferences: ^0.5.12+4
   intl: ^0.16.1
   loadmore: ^1.0.4
+  flutter_webrtc: ^0.5.8
   flutter_modular: ^2.0.1
+  device_info: ^1.0.0
   flutter_localizations:
     sdk: flutter
   flutter:
@@ -48,7 +50,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
-    - assets/images/icons/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

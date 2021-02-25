@@ -1,4 +1,4 @@
-import 'package:ecommerce/theme/colors.dart';
+import 'package:webrtc_demo/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../app_bloc.dart';

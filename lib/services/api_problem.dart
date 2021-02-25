@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerce/tool/common.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../tool/common.dart';
 
 doExpires() async{
   SharedPreferences prefs = await SharedPreferences.getInstance();

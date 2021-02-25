@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ecommerce/theme/theme.dart';
+
+import '../../theme/theme.dart';
 
 enum THEME_MODE{
   LIGHT,DARK

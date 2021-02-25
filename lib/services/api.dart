@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerce/models/model.dart';
-import 'package:ecommerce/tool/common.dart';
+import '../models/login/results_login.dart';
+import '../tool/common.dart';
 import 'LoggingInterceptor.dart';
 import 'api_problem.dart';
 

@@ -1,7 +1,7 @@
-import 'package:ecommerce/app/pages/home/home_page.dart';
-import 'package:ecommerce/app/pages/product/product_page.dart';
-import 'package:ecommerce/app/pages/routes.dart';
+import 'package:webrtc_demo/app/pages/chat/chat_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:webrtc_demo/app/pages/loading/loading_page.dart';
+import 'package:webrtc_demo/app/pages/routes.dart';
 
 class PrimaryModule extends ChildModule {
   @override
@@ -9,8 +9,8 @@ class PrimaryModule extends ChildModule {
 
   @override
   List<ModularRouter> get routers => [
-    ModularRouter(Modular.initialRoute, child: (_, args) => HomePage()),
-    ModularRouter(Routes.product, child: (_, args) => ProductPage()),
+    ModularRouter(Modular.initialRoute, child: (_, args) => LoadingPage()),
+    ModularRouter(Routes.chat, child: (_, args) => ChatPage()),
   ];
 
   static Inject get to => Inject<PrimaryModule>.of();

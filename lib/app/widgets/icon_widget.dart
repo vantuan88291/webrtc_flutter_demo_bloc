@@ -1,7 +1,7 @@
 import 'package:webrtc_demo/theme/colors.dart';
 import 'package:flutter/material.dart';
-class TextWidget extends StatelessWidget {
-  const TextWidget(this.text, {
+class IconWidget extends StatelessWidget {
+  const IconWidget(this.text, {
     Key key,
     this.style,
     this.textAlign,

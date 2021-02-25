@@ -1,12 +1,10 @@
-import 'package:ecommerce/services/api.dart';
+import 'package:webrtc_demo/services/api.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/app/app_widget.dart';
+import 'package:webrtc_demo/app/app_widget.dart';
 
 import 'app_bloc.dart';
-import 'modules/authen/authen_module.dart';
 import 'modules/primary/primary_module.dart';
-import 'pages/routes.dart';
 
 class AppModule extends MainModule {
   @override
@@ -17,8 +15,7 @@ class AppModule extends MainModule {
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, module: AuthenModule()),
-        ModularRouter(Routes.primary, module: PrimaryModule()),
+        ModularRouter(Modular.initialRoute, module: PrimaryModule()),
       ];
 
   @override

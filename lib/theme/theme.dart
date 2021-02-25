@@ -1,6 +1,7 @@
-import 'package:ecommerce/models/theme/theme_data.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce/theme/colors.dart';
+
+import '../models/theme/theme_data.dart';
+import 'colors.dart';
 
 class CustomTheme {
   Color colorStatus1;
