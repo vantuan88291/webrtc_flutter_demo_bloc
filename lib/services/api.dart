@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import '../models/login/results_login.dart';
 import '../tool/common.dart';
 import 'LoggingInterceptor.dart';
 import 'api_problem.dart';
@@ -12,7 +11,7 @@ class Api {
 
   Api._internal() {
     _dio = Dio();
-    _dio.options.baseUrl = BASE_API;
+    _dio.options.baseUrl = Common.DOMAIN;
     _dio.options.headers['Accept'] = 'application/json';
     _dio.options.connectTimeout = 20000;
     _dio.interceptors.add(LoggingInterceptor());
@@ -30,9 +29,9 @@ class Api {
     }
   }
 
-  Future<ResultsLogin> doLogin() async {
-    final request = _dio.post("login");
-    final response = await handlerResponse(request);
-    return ResultsLogin.fromJson(response);
-  }
+  // Future<ResultsLogin> doLogin() async {
+  //   final request = _dio.post("login");
+  //   final response = await handlerResponse(request);
+  //   return ResultsLogin.fromJson(response);
+  // }
 }
