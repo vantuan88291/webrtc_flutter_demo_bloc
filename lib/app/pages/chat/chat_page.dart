@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '../../app_bloc.dart';
-import '../../app_module.dart';
+import 'package:webrtc_demo/app/modules/primary/primary_module.dart';
 import '../../widgets/text_widget.dart';
+
+import 'chat_bloc.dart';
 
 class ChatPage extends StatefulWidget {
   final String title;
+
   const ChatPage({Key key, this.title = "Chat"}) : super(key: key);
 
   @override
@@ -13,7 +14,12 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  AppBloc appBloc = AppModule.to.get<AppBloc>();
+  ChatBloc chat = PrimaryModule.to.get<ChatBloc>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,7 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: Column(
         children: <Widget>[
-          TextWidget("ok nha ${appBloc.deviceName}"),
+          TextWidget("ok nha"),
           Icon(Icons.call)
         ],
       ),
