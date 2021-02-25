@@ -7,7 +7,7 @@ import 'package:webrtc_demo/app/pages/routes.dart';
 class PrimaryModule extends ChildModule {
   @override
   List<Bind> get binds => [
-    Bind((_) => ChatBloc(), lazy: true),
+    Bind((i) => ChatBloc(i()), lazy: true),
   ];
 
   @override

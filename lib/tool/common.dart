@@ -1,4 +1,4 @@
 class Common {
-  static final String DOMAIN = "http://10.0.10.53:3000";
+  static final String DOMAIN = "http://192.168.31.196:3000";
   static final String TOKEN = "TOKEN";
 }

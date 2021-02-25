@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/theme/theme_data.dart';
 import 'colors.dart';
+import 'colors.dart';
 
 class CustomTheme {
   Color colorStatus1;
@@ -34,11 +35,13 @@ class CustomTheme {
 
 final ThemeData lightThemeData = ThemeData.light().copyWith(
   brightness: Brightness.light,
-  primaryColor: Colors.red,
-  primaryColorDark: Colors.red,
+  primaryColor: Colors.blue,
+  primaryColorDark: Colors.blueAccent,
   backgroundColor: Colors.white,
-  accentColor: Colors.redAccent,
+  textSelectionColor: Colors.black,
+  accentColor: AppColor.blueLight,
   bottomAppBarColor: Colors.white,
+  textSelectionHandleColor: Colors.white70,
   textTheme: TextTheme(
     subtitle1: TextStyle(
       color: Colors.red,
@@ -48,12 +51,14 @@ final ThemeData lightThemeData = ThemeData.light().copyWith(
 );
 
 final ThemeData darkThemeData = ThemeData.dark().copyWith(
-    brightness: Brightness.light,
-    primaryColor: Colors.redAccent,
-    primaryColorDark: Colors.red,
-    backgroundColor: Colors.red,
-    accentColor: Colors.red,
-    bottomAppBarColor: Colors.white,
+    brightness: Brightness.dark,
+    primaryColor: Colors.white30,
+    primaryColorDark: Colors.white70,
+    backgroundColor: Colors.black54,
+    textSelectionHandleColor: Colors.white70,
+    textSelectionColor: Colors.white60,
+    accentColor: Colors.blueGrey,
+    bottomAppBarColor: Colors.grey,
     textTheme: TextTheme(
         subtitle1: TextStyle(
             color: Colors.red,
