@@ -1,4 +1,4 @@
-# ecommerce
+# Flutter WebRTC demo
 
 A new Flutter project. Created by Slidy
 
