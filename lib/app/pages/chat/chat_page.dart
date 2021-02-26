@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webrtc_demo/app/modules/primary/primary_module.dart';
 import 'package:webrtc_demo/generated/l10n.dart';
+import 'package:webrtc_demo/models/model.dart';
 import '../../widgets/button_widget.dart';
-import '../../widgets/button_widget.dart';
-import '../../widgets/text_field_widget.dart';
 import '../../widgets/text_field_widget.dart';
 import 'chat_bloc.dart';
 import 'widgets/item_peer.dart';
@@ -20,10 +19,17 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   ChatBloc chat = PrimaryModule.to.get<ChatBloc>();
-
+  var _controller = TextEditingController();
   @override
   void initState() {
     super.initState();
+  }
+
+  onSendMessage() {
+    if (_controller.text != "") {
+      chat.onSendMessage(_controller.text);
+      _controller.clear();
+    }
   }
 
   @override
@@ -35,15 +41,24 @@ class _ChatPageState extends State<ChatPage> {
         ),
         body: Column(children: <Widget>[
           Expanded(
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 10,
-                  itemBuilder: (c, i) {
-                    // return ItemPeer(key: Key("$i"),);
-                    return ItemUser(
-                      key: Key("$i"),
-                    );
-                  })),
+              child: StreamBuilder(
+                initialData: [],
+                stream: chat.getData,
+                builder: (c, d) => ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: d.data.length,
+                    itemBuilder: (c, i) {
+                      final DataUser item = d.data[i];
+                      if (chat.getDevice() == item.name) {
+                        return ItemUser(
+                          item,
+                          key: Key("$i"),
+                        );
+                      }
+                      return ItemPeer(item, key: Key("$i"),);
+                    }),
+              )
+          ),
           Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -52,6 +67,7 @@ class _ChatPageState extends State<ChatPage> {
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 4),
                     child: TextFieldWidget(
+                      controller: _controller,
                       maxLines: null,
                       keyBoard: TextInputType.multiline,
                       style: TextStyle(color: Theme.of(context).textSelectionColor),
@@ -63,7 +79,7 @@ class _ChatPageState extends State<ChatPage> {
                 color: Theme.of(context).backgroundColor,
                 padding: EdgeInsets.symmetric(vertical: 10),
                 radius: 0,
-                onPress: () {},
+                onPress: onSendMessage,
                 child: Icon(Icons.send, color: Theme.of(context).textSelectionColor, size: 30,),)
             ],
           )

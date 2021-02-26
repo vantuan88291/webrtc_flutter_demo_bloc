@@ -8,7 +8,7 @@ class DataUser {
       );
 
   DataUser.fromJson(Map<String, dynamic> json) {
-    name = json['min_balance'];
+    name = json['name'];
     message = json['message'];
   }
 

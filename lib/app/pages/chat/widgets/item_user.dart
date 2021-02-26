@@ -1,11 +1,11 @@
-import 'package:webrtc_demo/theme/colors.dart';
+import 'package:webrtc_demo/models/model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../theme/colors.dart';
 import '../../../widgets/button_widget.dart';
 import '../../../widgets/text_widget.dart';
 class ItemUser extends StatelessWidget {
-  const ItemUser({Key key}) : super(key: key);
+  final DataUser item;
+  const ItemUser(this.item, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ItemUser extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.all(10),
-              child: TextWidget('Nội dung comment', color: Theme.of(context).textSelectionHandleColor,),
+              child: TextWidget(item?.message, color: Theme.of(context).textSelectionHandleColor,),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(9),
                 color: Theme.of(context).primaryColor,

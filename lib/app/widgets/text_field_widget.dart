@@ -5,7 +5,7 @@ typedef onChangeText = void Function(String);
 typedef onValidateText = void Function(String);
 
 class TextFieldWidget extends StatelessWidget {
-  TextFieldWidget({Key key, this.maxLines = 1, this.hint, this.onChange, this.keyBoard, this.password, this.autovalidate, this.onValidate, this.style, this.value, this.inputBorder}) : super(key: key);
+  TextFieldWidget({Key key, this.maxLines = 1, this.hint, this.onChange, this.keyBoard, this.password, this.autovalidate, this.onValidate, this.style, this.value, this.inputBorder, this.controller}) : super(key: key);
   final String hint;
   final onChangeText onChange;
   final onValidateText onValidate;
@@ -16,11 +16,13 @@ class TextFieldWidget extends StatelessWidget {
   final int maxLines;
   final String value;
   final InputBorder inputBorder;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     final textStyle = TextStyle(color: AppColor.text).merge(style);
     return TextFormField(
+      controller: controller,
       initialValue: value,
       style: textStyle,
       maxLines: maxLines,
