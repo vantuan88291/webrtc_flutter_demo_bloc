@@ -50,12 +50,9 @@ class _ChatPageState extends State<ChatPage> {
                     itemBuilder: (c, i) {
                       final DataUser item = d.data[i];
                       if (chat.getDevice() == item.name) {
-                        return ItemUser(
-                          item,
-                          key: Key("$i"),
-                        );
+                        return ItemUser(item, key: Key("$i"),);
                       }
-                      return ItemPeer(item, key: Key("$i"),);
+                      return ItemPeer(item, key: GlobalKey(debugLabel: "$i"),);
                     }),
               )
           ),

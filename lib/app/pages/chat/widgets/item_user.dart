@@ -6,7 +6,6 @@ import '../../../widgets/text_widget.dart';
 class ItemUser extends StatelessWidget {
   final DataUser item;
   const ItemUser(this.item, {Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
 
