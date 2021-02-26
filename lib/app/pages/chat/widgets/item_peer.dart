@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../widgets/button_widget.dart';
 import '../../../widgets/text_widget.dart';
+import '../../routes.dart';
 class ItemPeer extends StatelessWidget {
   final DataUser item;
   final GlobalKey key;
@@ -43,7 +44,7 @@ class ItemPeer extends StatelessWidget {
                     right: MediaQuery.of(context).size.width - 120,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pop();
+                        Modular.to.pop();
                       },
                       child: Container(
                         width: 100,
@@ -52,6 +53,7 @@ class ItemPeer extends StatelessWidget {
                           child: ButtonWidget(
                             onPress: () {
                               Modular.to.pop();
+                              Modular.to.pushNamed(Routes.video);
                             },
                             text: S.current.call_video,
                           ),
