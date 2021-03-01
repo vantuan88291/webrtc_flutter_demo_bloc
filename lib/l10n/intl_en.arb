@@ -1,4 +1,6 @@
 {
   "enter_msg": "Enter message...",
-  "call_video": "Call Video"
+  "call_video": "Call Video",
+  "in_comming": "{name} is calling you...",
+  "comming_title": "Call Video"
 }

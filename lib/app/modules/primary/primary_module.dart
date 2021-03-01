@@ -15,7 +15,7 @@ class PrimaryModule extends ChildModule {
   List<ModularRouter> get routers => [
     ModularRouter(Modular.initialRoute, child: (_, args) => LoadingPage()),
     ModularRouter(Routes.chat, child: (_, args) => ChatPage()),
-    ModularRouter(Routes.video, child: (_, args) => VideoPage()),
+    ModularRouter(Routes.video, child: (_, args) => VideoPage(devicePeer: args.data["name"], isAnswer: args.data["isAnswer"],)),
   ];
 
   static Inject get to => Inject<PrimaryModule>.of();

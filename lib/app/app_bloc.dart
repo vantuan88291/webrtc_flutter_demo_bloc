@@ -1,3 +1,4 @@
+import 'package:webrtc_demo/models/model.dart';
 import 'package:webrtc_demo/models/theme/theme_data.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rxdart/rxdart.dart';
@@ -8,6 +9,7 @@ class AppBloc extends Disposable {
   final theme = BehaviorSubject<ThemeModes>();
   final message = BehaviorSubject<String>();
   final loading = BehaviorSubject<bool>.seeded(false);
+  final dataPush = BehaviorSubject<DataPush>();
   var deviceName = '';
 
   AppBloc(this.socket);
@@ -25,6 +27,19 @@ class AppBloc extends Disposable {
 
   Stream<bool> get getLoad => loading.stream;
 
+  Function(DataPush) get setPush => dataPush.sink.add;
+
+  Stream<DataPush> get getPush => dataPush.stream;
+
+  push(String title, String msg, String devicePeer) {
+    DataPush item = DataPush(msg, title, devicePeer);
+    setPush(item);
+  }
+
+  resetPush() {
+    setPush(null);
+  }
+
   Future changTheme(THEME_MODE themeMode) async {
     setTheme.add(getThemeMode(themeMode));
   }
@@ -40,5 +55,6 @@ class AppBloc extends Disposable {
     theme.close();
     message.close();
     loading.close();
+    dataPush.close();
   }
 }

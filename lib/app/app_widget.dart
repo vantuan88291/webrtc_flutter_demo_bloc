@@ -9,6 +9,7 @@ import 'app_bloc.dart';
 import 'app_module.dart';
 import 'widgets/alert_widget.dart';
 import 'widgets/loading_widget.dart';
+import 'widgets/push_widget.dart';
 
 class AppWidget extends StatefulWidget {
   @override
@@ -29,7 +30,8 @@ class _AppWidget extends State<AppWidget> {
       children: [
         child,
         LoadingWidget(),
-        AlertWidget()
+        AlertWidget(),
+        PushWidget()
       ],
     ),
     onGenerateRoute: Modular.generateRoute,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:webrtc_demo/app/modules/primary/primary_module.dart';
 import 'package:webrtc_demo/generated/l10n.dart';
 import 'package:webrtc_demo/models/model.dart';
+import '../../app_bloc.dart';
+import '../../app_module.dart';
 import '../../widgets/button_widget.dart';
 import '../../widgets/text_field_widget.dart';
 import 'chat_bloc.dart';
@@ -19,6 +21,7 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   ChatBloc chat = PrimaryModule.to.get<ChatBloc>();
+  AppBloc app = AppModule.to.get<AppBloc>();
   var _controller = TextEditingController();
   @override
   void initState() {

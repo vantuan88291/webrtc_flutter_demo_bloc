@@ -15,7 +15,7 @@ class ItemPeer extends StatelessWidget {
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return ScaleTransition(
             scale: Tween<double>(
-              begin: 0.0,
+              begin: 0.8,
               end: 1.0,
             ).animate(
               CurvedAnimation(
@@ -53,7 +53,10 @@ class ItemPeer extends StatelessWidget {
                           child: ButtonWidget(
                             onPress: () {
                               Modular.to.pop();
-                              Modular.to.pushNamed(Routes.video);
+                              Map<String, dynamic> params = new Map<String, dynamic>();
+                              params["name"] = this.item.name;
+                              params["isAnswer"] = false;
+                              Modular.to.pushNamed(Routes.video, arguments: params);
                             },
                             text: S.current.call_video,
                           ),

@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:webrtc_demo/generated/l10n.dart';
 import 'package:webrtc_demo/models/model.dart';
 import 'package:webrtc_demo/services/socket.dart';
 import 'package:webrtc_demo/tool/common.dart';
@@ -41,11 +42,13 @@ class ChatBloc extends Disposable {
   }
 
   onInComming(data) {
-    print("in data2 $data");
+    print("onInComming $data");
+    appBloc.push(S.current.comming_title, S.current.in_comming(data), data);
   }
 
-  onEndCall(data) {
-    print("in data3 $data");
+  onEndCall(_) {
+    print("in end call");
+    appBloc.resetPush();
   }
   
   onSendMessage(String message) {
