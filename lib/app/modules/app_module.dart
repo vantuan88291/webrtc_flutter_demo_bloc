@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:webrtc_demo/app/app_widget.dart';
 import 'package:webrtc_demo/services/socket.dart';
 
-import 'app_bloc.dart';
-import 'modules/primary/primary_module.dart';
+import '../blocs/app_bloc.dart';
+import 'primary/primary_module.dart';
 
 class AppModule extends MainModule {
   @override

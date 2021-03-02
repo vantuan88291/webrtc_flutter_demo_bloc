@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../app_bloc.dart';
-import '../../app_module.dart';
+import '../../blocs/app_bloc.dart';
+import '../../modules/app_module.dart';
 import '../routes.dart';
 
 class LoadingPage extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:webrtc_demo/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../app_bloc.dart';
-import '../app_module.dart';
+import '../blocs/app_bloc.dart';
+import '../modules/app_module.dart';
 
 class LoadingWidget extends StatefulWidget {
   @override

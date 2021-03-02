@@ -5,8 +5,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../models/theme/theme_data.dart';
 import '../theme/theme.dart';
-import 'app_bloc.dart';
-import 'app_module.dart';
+import 'blocs/app_bloc.dart';
+import 'modules/app_module.dart';
 import 'widgets/alert_widget.dart';
 import 'widgets/loading_widget.dart';
 import 'widgets/push_widget.dart';

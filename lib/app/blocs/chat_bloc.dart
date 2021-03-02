@@ -5,8 +5,8 @@ import 'package:webrtc_demo/models/model.dart';
 import 'package:webrtc_demo/services/socket.dart';
 import 'package:webrtc_demo/tool/common.dart';
 
-import '../../app_bloc.dart';
-import '../../app_module.dart';
+import 'app_bloc.dart';
+import '../modules/app_module.dart';
 
 class ChatBloc extends Disposable {
   final SocketCli socket;

@@ -1,4 +1,4 @@
-import 'package:webrtc_demo/app/pages/chat/chat_bloc.dart';
+import 'package:webrtc_demo/app/blocs/chat_bloc.dart';
 import 'package:webrtc_demo/app/pages/chat/chat_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:webrtc_demo/app/pages/loading/loading_page.dart';

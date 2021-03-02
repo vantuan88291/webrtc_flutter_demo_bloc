@@ -6,7 +6,7 @@ import '../../app_bloc.dart';
 import '../../app_module.dart';
 import '../../widgets/button_widget.dart';
 import '../../widgets/text_field_widget.dart';
-import 'chat_bloc.dart';
+import '../../blocs/chat_bloc.dart';
 import 'widgets/item_peer.dart';
 import 'widgets/item_user.dart';
 
